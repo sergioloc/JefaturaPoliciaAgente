@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_predenuncia"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Predenuncia" />
+        <item
+            android:id="@+id/nav_atestado"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Atestados" />
+        <item
+            android:id="@+id/nav_sancion"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sanción" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_opciones"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Opciones" />
+            <item
+                android:id="@+id/nav_cerrar"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Cerrar sesión" />
+        </menu>
+    </item>
+
+</menu>
