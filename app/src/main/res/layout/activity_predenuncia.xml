@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cdi.practica.jefaturapoliciaagente.Predenuncia">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Información del denunciante"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15dp"/>
+
+            <View
+                android:id="@+id/bar1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/text1"
+                android:background="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/nameT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre: "
+                android:layout_below="@+id/bar1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peter"
+                android:layout_below="@+id/bar1"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/nameT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/lastNameT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apellidos: "
+                android:layout_below="@+id/nameT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/lastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parker"
+                android:layout_below="@+id/nameT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/lastNameT"
+
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/dniT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DNI: "
+                android:layout_below="@+id/lastNameT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/dni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05426149L"
+                android:layout_below="@+id/lastNameT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/dniT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/genderT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexo: "
+                android:layout_below="@+id/dniT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino"
+                android:layout_below="@+id/dniT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/genderT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/phoneT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telefono: "
+                android:layout_below="@+id/genderT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="685362479"
+                android:layout_below="@+id/genderT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/phoneT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/emailT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:layout_below="@+id/phoneT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="yo@gmail.com"
+                android:layout_below="@+id/phoneT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/emailT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/birthT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de nacimiento: "
+                android:layout_below="@+id/emailT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="29/02/90"
+                android:layout_below="@+id/emailT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/birthT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/nationalityT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nacionalidad: "
+                android:layout_below="@+id/birthT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/nationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="España"
+                android:layout_below="@+id/birthT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/nationalityT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/domicileT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Domicilio: "
+                android:layout_below="@+id/nationalityT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/domicile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calle Azul 2"
+                android:layout_below="@+id/nationalityT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/domicileT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Información de los hechos"
+                android:layout_below="@+id/domicileT"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15dp"/>
+
+            <View
+                android:id="@+id/bar2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/text2"
+                android:background="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/typeT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo: "
+                android:layout_below="@+id/bar2"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hurto"
+                android:layout_below="@+id/bar2"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/typeT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/addressT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirección: "
+                android:layout_below="@+id/typeT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calle Pino 10"
+                android:layout_below="@+id/typeT"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/addressT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/timeT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora: "
+                android:layout_below="@+id/addressT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="hh:mm"
+                android:layout_below="@+id/addressT"
+                android:layout_toRightOf="@+id/timeT"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/desciptionT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción: "
+                android:layout_below="@+id/timeT"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/nameT"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/desciption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" ..."
+                android:layout_below="@+id/desciptionT"
+                android:layout_alignLeft="@+id/nameT"
+                android:textSize="15dp"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Aceptar"
+                android:backgroundTint="@color/colorAccent"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/desciption"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

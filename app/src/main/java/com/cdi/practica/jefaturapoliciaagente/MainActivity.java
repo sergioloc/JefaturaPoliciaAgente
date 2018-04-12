@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
 
     private AlertDialog alert;
     private ImageView button_pre;
+    private Boolean preAct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void init(){
+        preAct=false;
         // Buttons
         button_pre = (ImageView) findViewById(R.id.framePre);
         // Alert Dialog
@@ -69,7 +71,8 @@ public class MainActivity extends AppCompatActivity
                 .setPositiveButton("Aceptar",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-
+                                preAct=true;
+                                Toast.makeText(getApplicationContext(), "Predenuncia activa",Toast.LENGTH_SHORT).show();
                             }
                         });
         alert = builder.create();
@@ -126,7 +129,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_predenuncia) {
-            Toast.makeText(getApplicationContext(), "Predenuncia",Toast.LENGTH_SHORT).show();
+            if(preAct)
+                startActivity(new Intent(MainActivity.this,Predenuncia.class));
+            else
+                Toast.makeText(getApplicationContext(), "Debes aceptar una predenuncia",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_atestado) {
             Toast.makeText(getApplicationContext(), "Atestato",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_sancion) {
