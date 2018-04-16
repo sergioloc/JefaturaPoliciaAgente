@@ -17,8 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
+
 
 
 public class MainActivity extends AppCompatActivity
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity
                             }
                         });
         alert = builder.create();
+
     }
     public void buttons(){
         button_pre.setOnClickListener(new View.OnClickListener() {

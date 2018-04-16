@@ -4,15 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_predenuncia"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_action_predenuncia"
             android:title="Predenuncia" />
         <item
             android:id="@+id/nav_atestado"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_action_atestado"
             android:title="Atestados" />
         <item
             android:id="@+id/nav_sancion"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_action_sancion"
             android:title="Sanción" />
 
     </group>
@@ -25,7 +25,7 @@
                 android:title="Opciones" />
             <item
                 android:id="@+id/nav_cerrar"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_action_cerrar"
                 android:title="Cerrar sesión" />
         </menu>
     </item>

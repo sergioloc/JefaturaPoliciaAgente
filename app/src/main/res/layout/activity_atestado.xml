@@ -24,15 +24,25 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"/>
 
-            <Button
+            <View
+                android:id="@+id/bar1"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/mat_texto"
+                android:background="@color/colorAccent"/>
+
+
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/mat_boton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignTop="@+id/mat_texto"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:text="+"
-                android:textSize="20dp"/>
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_action_add"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvMat"
@@ -54,15 +64,26 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="10dp"/>
 
-            <Button
+            <View
+                android:id="@+id/bar2"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/per_texto"
+                android:background="@color/colorAccent"/>
+
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/per_boton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignTop="@+id/per_texto"
                 android:layout_alignParentRight="true"
+
                 android:layout_marginRight="10dp"
-                android:text="+"
-                android:textSize="20dp"/>
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_action_add"/>
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvPer"
@@ -84,15 +105,24 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="10dp"/>
 
-            <Button
+            <View
+                android:id="@+id/bar3"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/tes_texto"
+                android:background="@color/colorAccent"/>
+
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/tes_boton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignTop="@+id/tes_texto"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:text="+"
-                android:textSize="20dp"/>
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_action_add"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvTes"
@@ -104,14 +134,54 @@
                 android:layout_below="@id/tes_texto"/>
 
             <TextView
-                android:id="@+id/alc_texto"
+                android:id="@+id/img_texto"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_below="@+id/rvTes"
-                android:text="Test alcoholemia:"
+                android:text="Imagenes:"
                 android:gravity="center"
                 android:textSize="20dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"/>
+
+            <View
+                android:id="@+id/bar4"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/img_texto"
+                android:background="@color/colorAccent"/>
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/img_boton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignTop="@+id/img_texto"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_action_add"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/img_texto"/>
+
+            <TextView
+                android:id="@+id/alc_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/rvImg"
+                android:text="Test alcoholemia:"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginLeft="10dp"/>
 
             <TextView

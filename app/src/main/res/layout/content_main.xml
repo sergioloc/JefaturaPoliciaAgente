@@ -6,26 +6,35 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.cdi.practica.jefaturapoliciaagente.MainActivity"
+    android:background="@drawable/wallpaper1"
     tools:showIn="@layout/app_bar_main">
 
     <ImageView
         android:id="@+id/frameSOS"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:padding="10dp"
         android:src="@drawable/button_card_red"/>
+
+    <ImageView
+        android:id="@+id/alert_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:src="@drawable/ic_action_alert"
+        android:layout_alignTop="@+id/textSOS"/>
 
     <TextView
         android:id="@+id/textSOS"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/alert_icon"
         android:textColor="@color/colorTextIcons"
-        android:text="EMERGENCIAS:                         0"
-        android:layout_alignLeft="@+id/frameSOS"
-        android:layout_alignTop="@+id/frameSOS"
-        android:layout_marginLeft="30dp"
+        android:text="EMERGENCIAS:             0"
         android:textSize="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="37dp"/>
 
     <ImageView
@@ -48,6 +57,8 @@
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
         android:layout_marginTop="37dp"/>
+
+
 
 
 

@@ -2,6 +2,7 @@ package com.cdi.practica.jefaturapoliciaagente;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,11 +20,12 @@ import java.util.ArrayList;
 
 public class Atestado extends AppCompatActivity {
 
-    private Button botonMat, botonPer, botonTes, botonAlc, botonDro, botonAceptar;
+    private Button botonAlc, botonDro, botonAceptar;
     private RecyclerView rvMat, rvPer, rvTes;
     private ArrayList matriculas, personas, testigos;
     private  RVAdapter adapterMat, adapterPer, adapterTes;
     private AlertDialog m, p, t;
+    private FloatingActionButton botonMat, botonPer, botonTes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,9 @@ public class Atestado extends AppCompatActivity {
     }
 
     private void init(){
-        botonMat = (Button) findViewById(R.id.mat_boton);
-        botonPer = (Button) findViewById(R.id.per_boton);
-        botonTes = (Button) findViewById(R.id.tes_boton);
+        botonMat = (FloatingActionButton) findViewById(R.id.mat_boton);
+        botonPer = (FloatingActionButton) findViewById(R.id.per_boton);
+        botonTes = (FloatingActionButton) findViewById(R.id.tes_boton);
         botonAlc = (Button) findViewById(R.id.alc_boton);
         botonDro = (Button) findViewById(R.id.dro_boton);
         botonAceptar = (Button) findViewById(R.id.aceptar);
