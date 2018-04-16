@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
             else
                 Toast.makeText(getApplicationContext(), "Debes aceptar una predenuncia",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_atestado) {
-            Toast.makeText(getApplicationContext(), "Atestato",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this,Atestado.class));
         } else if (id == R.id.nav_sancion) {
             Toast.makeText(getApplicationContext(), "Sancion",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_opciones) {

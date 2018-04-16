@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cdi.practica.jefaturapoliciaagente.Atestado">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/mat_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Matriculas:"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/mat_boton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/mat_texto"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="+"
+                android:textSize="20dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvMat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/mat_texto"/>
+
+            <TextView
+                android:id="@+id/per_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/rvMat"
+                android:text="Personas implicadas:"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/per_boton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/per_texto"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="+"
+                android:textSize="20dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/per_texto"/>
+
+            <TextView
+                android:id="@+id/tes_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/rvPer"
+                android:text="Testigos:"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/tes_boton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/tes_texto"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="+"
+                android:textSize="20dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvTes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/tes_texto"/>
+
+            <TextView
+                android:id="@+id/alc_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/rvTes"
+                android:text="Test alcoholemia:"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/dro_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/alc_texto"
+                android:text="Test drogas:"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/alc_boton"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/alc_texto"
+                android:background="@color/colorAccent"
+                android:text="Negativo"/>
+
+            <Button
+                android:id="@+id/dro_boton"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/dro_texto"
+                android:background="@color/colorAccent"
+                android:text="Negativo"/>
+
+            <Button
+                android:id="@+id/aceptar"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/dro_boton"
+                android:layout_centerHorizontal="true"
+                android:text="Aceptar"/>
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

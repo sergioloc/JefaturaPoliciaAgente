@@ -10,4 +10,6 @@
     <color name="colorSecondaryText">#757575</color>
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorTextIcons">#FFFFFF</color>
+
+    <color name="red">#f73d3d</color>
 </resources>

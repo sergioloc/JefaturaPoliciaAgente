@@ -22,7 +22,10 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Predenuncia"></activity>
+        <activity android:name=".Predenuncia"
+            android:label="Predenuncia"/>
+        <activity android:name=".Atestado"
+            android:label="Atestado"></activity>
     </application>
 
 </manifest>
