@@ -20,34 +20,34 @@
     <ImageView
         android:id="@+id/alert_icon"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="25dp"
         android:src="@drawable/ic_action_alert"
-        android:layout_alignTop="@+id/textSOS"/>
+        android:layout_alignTop="@+id/frameSOS"/>
 
     <TextView
         android:id="@+id/textSOS"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:gravity="center"
         android:layout_toRightOf="@+id/alert_icon"
         android:textColor="@color/colorTextIcons"
-        android:text="EMERGENCIAS:"
+        android:text="Emergencias:"
+        android:layout_alignTop="@id/frameSOS"
         android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="37dp"/>
+        android:layout_marginLeft="30dp" />
 
     <TextView
         android:id="@+id/numSOS"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:gravity="center"
+        android:layout_alignTop="@id/frameSOS"
         android:layout_toRightOf="@+id/textSOS"
         android:textColor="@color/colorTextIcons"
         android:text="0"
         android:textSize="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="37dp"/>
+        android:layout_marginLeft="20dp" />
 
     <ImageView
         android:id="@+id/framePre"
@@ -58,17 +58,44 @@
         android:padding="10dp"
         android:src="@drawable/card_blue"/>
 
+    <ImageView
+        android:id="@+id/pre_icon"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="25dp"
+        android:src="@drawable/ic_action_predenuncia"
+        android:layout_alignTop="@+id/framePre"/>
+
     <TextView
         android:id="@+id/textPre"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
+        android:gravity="center"
         android:textColor="@color/colorTextIcons"
-        android:text="Predenuncias:                         3/6"
-        android:layout_alignLeft="@+id/framePre"
+        android:text="Predenuncias:"
         android:layout_alignTop="@+id/framePre"
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
-        android:layout_marginTop="37dp"/>
+        android:layout_toRightOf="@+id/pre_icon" />
+
+    <TextView
+        android:id="@+id/numPre"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_alignTop="@id/framePre"
+        android:layout_toRightOf="@+id/textPre"
+        android:textColor="@color/colorTextIcons"
+        android:text="0"
+        android:textSize="20dp"
+        android:layout_alignLeft="@+id/numSOS" />
+
+    <TextView
+        android:id="@+id/key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="key"/>
+
 
 
 

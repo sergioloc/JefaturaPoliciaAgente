@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cdi.practica.jefaturapoliciaagente.Predenuncia">
+    tools:context="com.cdi.practica.jefaturapoliciaagente.PredenunciaActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -43,10 +43,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peter"
+                android:text=""
                 android:layout_below="@+id/bar1"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/nameT"
@@ -64,10 +64,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/lastName"
+                android:id="@+id/apellidos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Parker"
+                android:text=""
                 android:layout_below="@+id/nameT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/lastNameT"
@@ -89,7 +89,7 @@
                 android:id="@+id/dni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="05426149L"
+                android:text=""
                 android:layout_below="@+id/lastNameT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/dniT"
@@ -107,10 +107,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/gender"
+                android:id="@+id/sexo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Masculino"
+                android:text=""
                 android:layout_below="@+id/dniT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/genderT"
@@ -128,10 +128,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="685362479"
+                android:text=""
                 android:layout_below="@+id/genderT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/phoneT"
@@ -152,7 +152,7 @@
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="yo@gmail.com"
+                android:text=""
                 android:layout_below="@+id/phoneT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/emailT"
@@ -170,10 +170,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/birth"
+                android:id="@+id/cumple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="29/02/90"
+                android:text=""
                 android:layout_below="@+id/emailT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/birthT"
@@ -191,10 +191,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/nationality"
+                android:id="@+id/nacio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="España"
+                android:text=""
                 android:layout_below="@+id/birthT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/nationalityT"
@@ -212,10 +212,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/domicile"
+                android:id="@+id/domicilio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calle Azul 2"
+                android:text=""
                 android:layout_below="@+id/nationalityT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/domicileT"
@@ -251,7 +251,7 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/type"
+                android:id="@+id/tipo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hurto"
@@ -272,10 +272,10 @@
                 android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/address"
+                android:id="@+id/direccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calle Pino 10"
+                android:text=""
                 android:layout_below="@+id/typeT"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/addressT"
@@ -292,11 +292,12 @@
                 android:textStyle="bold"
                 android:textSize="15dp"/>
 
-            <EditText
-                android:id="@+id/time"
+            <TextView
+                android:id="@+id/hora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="hh:mm"
+                android:text=""
+                android:layout_marginTop="10dp"
                 android:layout_below="@+id/addressT"
                 android:layout_toRightOf="@+id/timeT"
                 android:textSize="15dp"/>
@@ -313,7 +314,7 @@
                 android:textSize="15dp"/>
 
             <EditText
-                android:id="@+id/desciption"
+                android:id="@+id/descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=" ..."
@@ -322,14 +323,16 @@
                 android:textSize="15dp"/>
 
             <Button
+                android:id="@+id/botonPre"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="Aceptar"
                 android:backgroundTint="@color/colorAccent"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/desciption"
+                android:layout_below="@+id/descripcion"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"/>
+
 
 
         </RelativeLayout>
