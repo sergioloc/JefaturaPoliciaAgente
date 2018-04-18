@@ -16,17 +16,35 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-import com.google.firebase.auth.FirebaseAuth;
 
+import com.cdi.practica.jefaturapoliciaagente.Objetos.Agente;
+import com.cdi.practica.jefaturapoliciaagente.Objetos.Emergencia;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private AlertDialog alert;
-    private ImageView button_pre;
+    private ImageView button_pre, button_emg;
     private Boolean preAct;
+    private FirebaseDatabase database;
+    private FirebaseUser user;
+    private DatabaseReference refAgentes, refEmgEspera, refEmgActiva;
+    private ArrayList emgEsperaList;
+    private TextView numEmg, nombreAgente, idAgente;
+    private View headerView;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +64,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         init();
+        cargarEmergencias();
         buttons();
 
 
@@ -53,10 +72,17 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void init(){
+    private void init(){
         preAct=false;
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        headerView = navigationView.getHeaderView(0);
+        nombreAgente = (TextView) headerView.findViewById(R.id.nombreAgente);
+        idAgente = (TextView) headerView.findViewById(R.id.idAgente);
         // Buttons
         button_pre = (ImageView) findViewById(R.id.framePre);
+        button_emg = (ImageView) findViewById(R.id.frameSOS);
+        //TextView
+        numEmg = (TextView) findViewById(R.id.numSOS);
         // Alert Dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Localización: calle pino 10\nTipo: hurto")
@@ -76,17 +102,107 @@ public class MainActivity extends AppCompatActivity
                             }
                         });
         alert = builder.create();
-
+        // Firebase
+        database = FirebaseDatabase.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        refAgentes = database.getReference("agentes");
+        refEmgEspera = database.getReference("emergencias").child("espera").child(user.getUid());
+        refEmgActiva = database.getReference("emergencias").child("activas");
+        getDatosAgente();
+        // ArrayList
+        emgEsperaList = new ArrayList();
     }
-    public void buttons(){
+
+    private void buttons(){
         button_pre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 alert.show();
             }
         });
+        button_emg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(emgEsperaList.size()!=0){
+                    Toast.makeText(getApplicationContext(),String.valueOf(emgEsperaList.size()),Toast.LENGTH_SHORT).show();
+                    mostrarDialogEmg();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "No hay ninguna emergencia pendiente", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
+    private void cargarEmergencias(){
+        refEmgEspera.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Emergencia emergencia = snapshot.getValue(Emergencia.class);
+                    emgEsperaList.add(emergencia);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        numEmg.setText(String.valueOf(emgEsperaList.size()));
+
+    }
+
+    private void mostrarDialogEmg(){
+        String ubicacion = "";
+        // Alert Dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Ubicación "+ubicacion)
+                .setTitle("¿Aceptar emergencia?")
+                .setCancelable(true)
+                .setNegativeButton("Cancelar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                .setPositiveButton("Aceptar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                            activarEmergencia();
+                            }
+                        });
+        alert = builder.create();
+        alert.show();
+    }
+
+    private void activarEmergencia(){
+        Toast.makeText(getApplicationContext(),"Emergencia activa",Toast.LENGTH_SHORT).show();
+        refEmgActiva.child(user.getUid()).setValue(emgEsperaList.get(0));
+        refEmgEspera.removeValue();
+        startActivity(new Intent(MainActivity.this, EmergenciaActivity.class));
+
+    }
+
+    private void getDatosAgente(){
+        refAgentes.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Agente agente = snapshot.getValue(Agente.class);
+                    if(snapshot.getKey().equals(user.getUid())){
+                        nombreAgente.setText(agente.getNombre());
+                        idAgente.setText(agente.getId());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
 
 

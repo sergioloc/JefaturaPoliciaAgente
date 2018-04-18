@@ -32,9 +32,21 @@
         android:gravity="center"
         android:layout_toRightOf="@+id/alert_icon"
         android:textColor="@color/colorTextIcons"
-        android:text="EMERGENCIAS:             0"
+        android:text="EMERGENCIAS:"
         android:textSize="20dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="37dp"/>
+
+    <TextView
+        android:id="@+id/numSOS"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/textSOS"
+        android:textColor="@color/colorTextIcons"
+        android:text="0"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="37dp"/>
 
     <ImageView
@@ -57,6 +69,7 @@
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
         android:layout_marginTop="37dp"/>
+
 
 
 
