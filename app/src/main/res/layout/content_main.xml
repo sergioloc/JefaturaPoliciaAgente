@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.cdi.practica.jefaturapoliciaagente.MainActivity"
-    android:background="@drawable/wallpaper1"
+    android:background="@drawable/fondo_main"
     tools:showIn="@layout/app_bar_main">
 
     <ImageView
@@ -53,17 +53,17 @@
         android:id="@+id/framePre"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/frameSOS"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         android:padding="10dp"
-        android:src="@drawable/card_blue"/>
+        android:src="@drawable/card_yellow"/>
 
     <ImageView
         android:id="@+id/pre_icon"
         android:layout_width="50dp"
         android:layout_height="100dp"
         android:layout_marginLeft="25dp"
-        android:src="@drawable/ic_action_predenuncia"
+        android:src="@drawable/ic_action_predenuncia_blaco"
         android:layout_alignTop="@+id/framePre"/>
 
     <TextView
@@ -94,6 +94,7 @@
         android:id="@+id/key"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorTextIcons"
         android:text="key"/>
 
 

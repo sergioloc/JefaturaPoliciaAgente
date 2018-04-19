@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity
     private TextView numEmg, numPre, nombreAgente, idAgente, key;
     private View headerView;
     private NavigationView navigationView;
-    private String keyS;
 
 
     @Override
@@ -141,6 +140,7 @@ public class MainActivity extends AppCompatActivity
                     if(snapshot.getKey().equals(user.getUid())){
                         nombreAgente.setText(agente.getApellidos()+", "+agente.getNombre());
                         idAgente.setText(agente.getId());
+                        key.setText(agente.getId());
                     }
                 }
             }
@@ -205,7 +205,23 @@ public class MainActivity extends AppCompatActivity
         preAct=true;
     }
 
+    private Boolean estaActiva(){
+        boolean activa = false;
+        refPreActiva.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                key.setText(dataSnapshot.getKey());
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        if(key.getText().toString().equals(user.getUid()))
+            activa = true;
+        return activa;
+    }
 
 
     /**Dialog**/
@@ -279,7 +295,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_predenuncia) {
-            if(preAct)
+            if(estaActiva())
                 startActivity(new Intent(MainActivity.this,PredenunciaActivity.class));
             else
                 Toast.makeText(getApplicationContext(), "Debes aceptar una predenuncia",Toast.LENGTH_SHORT).show();
@@ -325,22 +341,6 @@ public class MainActivity extends AppCompatActivity
 */
 
     /*
-     private Boolean estaActiva(){
-        boolean activa = false;
-        refPreActiva.child(user.getUid()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                key.setText(dataSnapshot.getKey());
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        if(key.getText().toString().equals(user.getUid()))
-            activa = true;
-        return activa;
-    }
       */
 }

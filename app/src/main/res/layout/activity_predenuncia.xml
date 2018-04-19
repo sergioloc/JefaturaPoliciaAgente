@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_pre"
     tools:context="com.cdi.practica.jefaturapoliciaagente.PredenunciaActivity">
 
     <ScrollView
@@ -20,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="Información del denunciante"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="40dp"
                 android:textSize="15dp"/>
 
             <View
@@ -40,7 +41,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_alignLeft="@+id/text1"/>
 
             <TextView
                 android:id="@+id/nombre"
@@ -229,7 +231,8 @@
                 android:layout_below="@+id/domicileT"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="5dp"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:layout_alignLeft="@+id/text1"/>
 
             <View
                 android:id="@+id/bar2"
