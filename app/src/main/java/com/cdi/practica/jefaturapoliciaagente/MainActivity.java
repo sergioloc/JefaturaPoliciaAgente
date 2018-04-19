@@ -1,5 +1,6 @@
 package com.cdi.practica.jefaturapoliciaagente;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity
     private TextView numEmg, numPre, nombreAgente, idAgente, key;
     private View headerView;
     private NavigationView navigationView;
+    private Activity activity;
 
 
     @Override
@@ -62,10 +64,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        activity = this;
         init();
         cargarEmergencias();
         cargarPredenuncias();
         buttons();
+
+
+
+
 
         //numPre.setText(String.valueOf(preEsperaList.size()));
         //numEmg.setText(String.valueOf(emgEsperaList.size()));
@@ -120,6 +127,7 @@ public class MainActivity extends AppCompatActivity
         button_emg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(emgEsperaList.size()!=0){
                     Toast.makeText(getApplicationContext(),String.valueOf(emgEsperaList.size()),Toast.LENGTH_SHORT).show();
                     mostrarDialogEmg();
@@ -163,6 +171,8 @@ public class MainActivity extends AppCompatActivity
                     Emergencia emergencia = snapshot.getValue(Emergencia.class);
                     emgEsperaList.add(emergencia);
                 }
+                numEmg.setText(String.valueOf(emgEsperaList.size()));
+                Toast.makeText(getApplication().getApplicationContext(),"EMERGENCIA RECIBIDA", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -170,7 +180,6 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-        numEmg.setText(String.valueOf(emgEsperaList.size()));
     }
 
     private void cargarPredenuncias(){
@@ -181,6 +190,7 @@ public class MainActivity extends AppCompatActivity
                     Predenuncia pre = snapshot.getValue(Predenuncia.class);
                     preEsperaList.add(pre);
                 }
+                numPre.setText(String.valueOf(preEsperaList.size()));
             }
 
             @Override
@@ -304,7 +314,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_sancion) {
             Toast.makeText(getApplicationContext(), "Sancion",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_opciones) {
-            Toast.makeText(getApplicationContext(), "Opciones",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "App desarollada por:\n- Sergio López\n- Carlos Tarancón\n- Joaquín\n- Javier Sangil",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_cerrar) {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this,Login.class));

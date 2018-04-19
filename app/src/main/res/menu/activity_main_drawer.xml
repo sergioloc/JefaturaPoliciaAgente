@@ -21,8 +21,8 @@
         <menu>
             <item
                 android:id="@+id/nav_opciones"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Opciones" />
+                android:icon="@drawable/ic_info"
+                android:title="Acerca de" />
             <item
                 android:id="@+id/nav_cerrar"
                 android:icon="@drawable/ic_action_cerrar"

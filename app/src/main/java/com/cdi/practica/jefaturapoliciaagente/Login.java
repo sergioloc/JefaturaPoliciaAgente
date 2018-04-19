@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         init();
         buttons();
+
     }
 
     /**Inicializacion de variables**/
