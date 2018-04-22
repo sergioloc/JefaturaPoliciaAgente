@@ -1,9 +1,12 @@
 package com.cdi.practica.jefaturapoliciaagente;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,10 @@ public class PredenunciaActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private FirebaseUser user;
     private DatabaseReference refPreActiva, refUsu, refDen;
+    private int cont=0;
+    private ImageView iv1,iv2,iv3,iv11,iv22,iv33;
+
+    private static final int CAMERA_PIC_REQUEST = 1337;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,69 @@ public class PredenunciaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 guardarDatos();
+            }
+        });
+
+        iv1 = (ImageView) findViewById(R.id.iv1);
+        iv2 = (ImageView) findViewById(R.id.iv2);
+        iv3 = (ImageView) findViewById(R.id.iv3);
+
+        iv11 = (ImageView) findViewById(R.id.iv11);
+        iv22 = (ImageView) findViewById(R.id.iv21);
+        iv33 = (ImageView) findViewById(R.id.iv31);
+
+        iv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cont=1;
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            }
+        });
+        iv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cont=2;
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            }
+        });
+        iv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cont=3;
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            }
+        });
+
+        iv11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog1 = new Dialog(PredenunciaActivity.this);
+                dialog1.setContentView(R.layout.abrir_imagen);
+                dialog1.findViewById(R.id.imagen).setBackground(iv1.getDrawable());
+                dialog1.show();
+            }
+        });
+
+        iv22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog1 = new Dialog(PredenunciaActivity.this);
+                dialog1.setContentView(R.layout.abrir_imagen);
+                dialog1.findViewById(R.id.imagen).setBackground(iv2.getDrawable());
+                dialog1.show();
+            }
+        });
+
+        iv33.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog1 = new Dialog(PredenunciaActivity.this);
+                dialog1.setContentView(R.layout.abrir_imagen);
+                dialog1.findViewById(R.id.imagen).setBackground(iv3.getDrawable());
+                dialog1.show();
             }
         });
 
@@ -124,5 +194,24 @@ public class PredenunciaActivity extends AppCompatActivity {
 
     private void toast(String texto){
         Toast.makeText(getApplicationContext(),texto,Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAMERA_PIC_REQUEST) {
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            if(cont==1){
+                iv1.setImageBitmap(image);
+                iv1.setPadding(0,0,0,0);
+                iv11.setVisibility(View.VISIBLE);
+            }else if(cont==2){
+                iv2.setImageBitmap(image);
+                iv2.setPadding(0,0,0,0);
+                iv22.setVisibility(View.VISIBLE);
+            }else{
+                iv3.setImageBitmap(image);
+                iv3.setPadding(0,0,0,0);
+                iv33.setVisibility(View.VISIBLE);
+            }
+        }
     }
 }
