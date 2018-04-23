@@ -28,7 +28,8 @@
         <activity
             android:name=".Atestado"
             android:label="Atestado" />
-        <activity android:name=".EmergenciaActivity"></activity>
+        <activity android:name=".EmergenciaActivity" />
+        <activity android:name=".Sancion"></activity>
     </application>
 
 </manifest>

@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity
         cargarPredenuncias();
         buttons();
 
+        key.setVisibility(View.INVISIBLE);
+
 
 
 
@@ -116,7 +118,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 if(preEsperaList.size()!=0){
-                    Toast.makeText(getApplicationContext(),String.valueOf(preEsperaList.size()),Toast.LENGTH_SHORT).show();
                     mostrarDialogPre();
                 }
                 else{
@@ -129,7 +130,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
 
                 if(emgEsperaList.size()!=0){
-                    Toast.makeText(getApplicationContext(),String.valueOf(emgEsperaList.size()),Toast.LENGTH_SHORT).show();
                     mostrarDialogEmg();
                 }
                 else{
@@ -172,7 +172,8 @@ public class MainActivity extends AppCompatActivity
                     emgEsperaList.add(emergencia);
                 }
                 numEmg.setText(String.valueOf(emgEsperaList.size()));
-                Toast.makeText(getApplication().getApplicationContext(),"EMERGENCIA RECIBIDA", Toast.LENGTH_SHORT).show();
+                if(emgEsperaList.size()>0)
+                    Toast.makeText(getApplication().getApplicationContext(),"EMERGENCIA RECIBIDA", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -237,10 +238,9 @@ public class MainActivity extends AppCompatActivity
     /**Dialog**/
 
     private void mostrarDialogEmg(){
-        String ubicacion = "";
         // Alert Dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Ubicación "+ubicacion)
+        builder.setMessage("")
                 .setTitle("¿Aceptar emergencia?")
                 .setCancelable(true)
                 .setNegativeButton("Cancelar",
@@ -260,11 +260,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void mostrarDialogPre(){
-        String tipo = "";
-        String ubicacion = "";
         // Alert Dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Tipo: "+tipo+"\nUbicación: "+ubicacion)
+        builder.setMessage("")
                 .setTitle("¿Aceptar predenuncia?")
                 .setCancelable(true)
                 .setNegativeButton("Cancelar",
@@ -305,16 +303,16 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_predenuncia) {
-            if(estaActiva())
+            if(preAct)
                 startActivity(new Intent(MainActivity.this,PredenunciaActivity.class));
             else
                 Toast.makeText(getApplicationContext(), "Debes aceptar una predenuncia",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_atestado) {
             startActivity(new Intent(MainActivity.this,Atestado.class));
         } else if (id == R.id.nav_sancion) {
-            Toast.makeText(getApplicationContext(), "Sancion",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this,Sancion.class));
         } else if (id == R.id.nav_opciones) {
-            Toast.makeText(getApplicationContext(), "App desarollada por:\n- Sergio López\n- Carlos Tarancón\n- Joaquín\n- Javier Sangil",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "App desarollada por:\n- Sergio López\n- Carlos Tarancón\n- Joaquín Capel\n- Javier Sangil",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_cerrar) {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this,Login.class));
@@ -326,31 +324,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    /**Menu**/
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-*/
-
-    /*
-
-      */
 }

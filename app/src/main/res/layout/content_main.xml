@@ -32,7 +32,7 @@
         android:gravity="center"
         android:layout_toRightOf="@+id/alert_icon"
         android:textColor="@color/colorTextIcons"
-        android:text="Emergencias:"
+        android:text="Emergencias\npendientes:"
         android:layout_alignTop="@id/frameSOS"
         android:textSize="20dp"
         android:layout_marginLeft="30dp" />
@@ -45,7 +45,7 @@
         android:layout_alignTop="@id/frameSOS"
         android:layout_toRightOf="@+id/textSOS"
         android:textColor="@color/colorTextIcons"
-        android:text="0"
+        android:text="X"
         android:textSize="20dp"
         android:layout_marginLeft="20dp" />
 
@@ -53,8 +53,8 @@
         android:id="@+id/framePre"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
+        android:layout_below="@id/frameSOS"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:src="@drawable/card_yellow"/>
 
@@ -72,7 +72,7 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:textColor="@color/colorTextIcons"
-        android:text="Predenuncias:"
+        android:text="Predenuncias\npendientes:"
         android:layout_alignTop="@+id/framePre"
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
@@ -86,7 +86,7 @@
         android:layout_alignTop="@id/framePre"
         android:layout_toRightOf="@+id/textPre"
         android:textColor="@color/colorTextIcons"
-        android:text="0"
+        android:text="X"
         android:textSize="20dp"
         android:layout_alignLeft="@+id/numSOS" />
 

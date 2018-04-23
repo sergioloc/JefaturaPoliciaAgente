@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/red"
     tools:context="com.cdi.practica.jefaturapoliciaagente.EmergenciaActivity">
 
 
@@ -13,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Completada"/>
+        android:textSize="20dp"
+        android:text="Emergencia\nresuelta"/>
 
 
 </RelativeLayout>

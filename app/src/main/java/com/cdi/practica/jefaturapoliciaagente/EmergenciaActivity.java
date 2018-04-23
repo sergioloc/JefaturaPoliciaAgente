@@ -1,5 +1,6 @@
 package com.cdi.practica.jefaturapoliciaagente;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,8 @@ public class EmergenciaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 refEmgAct.child(user.getUid()).removeValue();
+                startActivity(new Intent(EmergenciaActivity.this,MainActivity.class));
+                finish();
             }
         });
     }

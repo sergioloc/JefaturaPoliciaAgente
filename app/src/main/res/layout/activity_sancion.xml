@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimarySemiLight"
+    tools:context="com.cdi.practica.jefaturapoliciaagente.Sancion">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de sanción:"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t1"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@color/colorTextIcons"
+        android:layout_margin="5dp"
+        android:hint="..."
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos del denunciado:"
+        android:layout_below="@+id/t2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/t4"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/t3"
+        android:textColor="@color/colorPrimaryText"
+        android:hint="Nombre"
+        android:background="@color/colorTextIcons"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/t5"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/t4"
+        android:textColor="@color/colorPrimaryText"
+        android:hint="Apellidos"
+        android:background="@color/colorTextIcons"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/t6"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/t5"
+        android:textColor="@color/colorPrimaryText"
+        android:hint="DNI"
+        android:background="@color/colorTextIcons"
+        android:layout_marginTop="20dp"/>
+
+    <CheckBox
+        android:id="@+id/t7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t6"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_centerHorizontal="true"
+        android:text="Importe pagado"/>
+
+    <Button
+        android:id="@+id/t8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/t7"/>
+
+
+
+</RelativeLayout>

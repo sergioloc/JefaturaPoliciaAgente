@@ -161,23 +161,15 @@
                 android:layout_alignTop="@+id/img_texto"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_action_add"/>
+                android:layout_marginTop="15dp"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvImg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_below="@id/img_texto"/>
+
 
             <TextView
                 android:id="@+id/alc_texto"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_below="@+id/rvImg"
+                android:layout_below="@+id/img_boton"
                 android:text="Test alcoholemia:"
                 android:gravity="center"
                 android:textSize="20dp"
