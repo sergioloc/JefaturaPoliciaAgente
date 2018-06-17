@@ -10,70 +10,40 @@
     tools:showIn="@layout/app_bar_main">
 
     <ImageView
-        android:id="@+id/frameSOS"
+        android:id="@+id/contentPre"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        android:src="@drawable/button_card_red"/>
-
-    <ImageView
-        android:id="@+id/alert_icon"
-        android:layout_width="50dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="25dp"
-        android:src="@drawable/ic_action_alert"
-        android:layout_alignTop="@+id/frameSOS"/>
-
-    <TextView
-        android:id="@+id/textSOS"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:layout_toRightOf="@+id/alert_icon"
-        android:textColor="@color/colorTextIcons"
-        android:text="Emergencias\npendientes:"
-        android:layout_alignTop="@id/frameSOS"
-        android:textSize="20dp"
-        android:layout_marginLeft="30dp" />
-
-    <TextView
-        android:id="@+id/numSOS"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:layout_alignTop="@id/frameSOS"
-        android:layout_toRightOf="@+id/textSOS"
-        android:textColor="@color/colorTextIcons"
-        android:text="X"
-        android:textSize="20dp"
-        android:layout_marginLeft="20dp" />
-
-    <ImageView
-        android:id="@+id/framePre"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@id/frameSOS"
-        android:layout_marginTop="10dp"
+        android:layout_height="150dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:padding="10dp"
         android:src="@drawable/card_yellow"/>
 
     <ImageView
+        android:id="@+id/framePre"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignTop="@id/contentPre"
+        android:padding="10dp"
+        android:src="@drawable/card_yellow_dark"/>
+
+    <ImageView
         android:id="@+id/pre_icon"
-        android:layout_width="50dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="25dp"
-        android:src="@drawable/ic_action_predenuncia_blaco"
-        android:layout_alignTop="@+id/framePre"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/framePre"
+        android:layout_alignBottom="@id/framePre"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_action_predenuncia_blaco" />
 
     <TextView
         android:id="@+id/textPre"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_alignTop="@+id/framePre"
+        android:layout_alignBottom="@id/framePre"
         android:gravity="center"
         android:textColor="@color/colorTextIcons"
-        android:text="Predenuncias\npendientes:"
-        android:layout_alignTop="@+id/framePre"
+        android:text="Predenuncias:"
         android:layout_marginLeft="30dp"
         android:textSize="20dp"
         android:layout_toRightOf="@+id/pre_icon" />
@@ -82,13 +52,104 @@
         android:id="@+id/numPre"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_alignTop="@+id/framePre"
+        android:layout_alignBottom="@id/framePre"
         android:gravity="center"
-        android:layout_alignTop="@id/framePre"
         android:layout_toRightOf="@+id/textPre"
         android:textColor="@color/colorTextIcons"
         android:text="X"
         android:textSize="20dp"
         android:layout_alignLeft="@+id/numSOS" />
+
+    <TextView
+        android:id="@+id/desPre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextIcons"
+        android:text="No se ha seleccionado\nninguna predenucia"
+        android:layout_alignTop="@+id/botonPre"
+        android:layout_alignLeft="@+id/pre_icon"
+        android:layout_alignStart="@+id/pre_icon" />
+
+    <Button
+        android:id="@+id/botonPre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:layout_alignTop="@id/contentPre"
+        android:layout_alignBottom="@id/contentPre"
+        android:layout_alignRight="@id/contentPre"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/yellow_dark"
+        android:textColor="@color/colorTextIcons"/>
+
+    <ImageView
+        android:id="@+id/contentSOS"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_above="@id/contentPre"
+        android:padding="10dp"
+        android:src="@drawable/button_card_red"/>
+
+    <ImageView
+        android:id="@+id/frameSOS"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignTop="@id/contentSOS"
+        android:padding="10dp"
+        android:src="@drawable/card_red_pressed"/>
+
+    <ImageView
+        android:id="@+id/alert_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/frameSOS"
+        android:layout_alignBottom="@id/frameSOS"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_action_alert" />
+
+    <TextView
+        android:id="@+id/textSOS"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/frameSOS"
+        android:layout_alignBottom="@id/frameSOS"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/alert_icon"
+        android:textColor="@color/colorTextIcons"
+        android:text="Emergencias:"
+        android:textSize="20dp"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/numSOS"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/frameSOS"
+        android:layout_alignBottom="@id/frameSOS"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/textSOS"
+        android:textColor="@color/colorTextIcons"
+        android:text="X"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <Button
+        android:id="@+id/botonSOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:layout_alignTop="@id/frameSOS"
+        android:layout_alignBottom="@id/contentSOS"
+        android:layout_alignRight="@id/frameSOS"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/red_dark"
+        android:textColor="@color/colorTextIcons"/>
 
     <TextView
         android:id="@+id/key"
@@ -98,6 +159,68 @@
         android:textColor="@color/colorTextIcons"
         android:text="key"/>
 
+    <ImageView
+        android:id="@+id/contentEve"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/contentPre"
+        android:padding="10dp"
+        android:src="@drawable/card_green"/>
+
+    <ImageView
+        android:id="@+id/frameEve"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignTop="@id/contentEve"
+        android:padding="10dp"
+        android:src="@drawable/card_green_dark"/>
+
+    <TextView
+        android:id="@+id/textEve"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/frameEve"
+        android:layout_alignBottom="@id/frameEve"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/alert_icon"
+        android:textColor="@color/colorTextIcons"
+        android:text="Eventos:"
+        android:textSize="20dp"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/asuntoEve"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/frameEve"
+        android:layout_alignBottom="@id/frameEve"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/textEve"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorTextIcons"
+        android:text=""
+        android:textSize="20dp"/>
+
+    <ImageView
+        android:id="@+id/event_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/frameEve"
+        android:layout_alignBottom="@id/frameEve"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_action_evento" />
+
+    <TextView
+        android:id="@+id/desEve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/contentEve"
+        android:layout_alignBottom="@id/contentEve"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorTextIcons"
+        android:text="No hay ningún evento"/>
 
 
 

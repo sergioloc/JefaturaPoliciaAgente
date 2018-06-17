@@ -12,4 +12,7 @@
     <color name="colorTextIcons">#FFFFFF</color>
 
     <color name="red">#f73d3d</color>
+    <color name="red_dark">#b92222</color>
+    <color name="yellow_dark">#c98d49</color>
+    <color name="green_dark">#51a94c</color>
 </resources>

@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,16 +36,16 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private AlertDialog alert;
-    private ImageView button_pre, button_emg;
     private Boolean preAct;
     private FirebaseDatabase database;
     private FirebaseUser user;
     private DatabaseReference refAgentes, refEmgEspera, refEmgActiva, refPreEspera, refPreActiva;
     private ArrayList emgEsperaList, preEsperaList, preActivaList;
-    private TextView numEmg, numPre, nombreAgente, idAgente, key;
+    private TextView numEmg, numPre, nombreAgente, idAgente, key, desPre, desEve;
     private View headerView;
     private NavigationView navigationView;
     private Activity activity;
+    private Button botonSOS, botonPre;
 
 
     @Override
@@ -72,13 +73,6 @@ public class MainActivity extends AppCompatActivity
 
         key.setVisibility(View.INVISIBLE);
 
-
-
-
-
-        //numPre.setText(String.valueOf(preEsperaList.size()));
-        //numEmg.setText(String.valueOf(emgEsperaList.size()));
-
     }
 
 
@@ -92,12 +86,14 @@ public class MainActivity extends AppCompatActivity
         nombreAgente = (TextView) headerView.findViewById(R.id.nombreAgente);
         idAgente = (TextView) headerView.findViewById(R.id.idAgente);
         // Buttons
-        button_pre = (ImageView) findViewById(R.id.framePre);
-        button_emg = (ImageView) findViewById(R.id.frameSOS);
+        botonSOS = (Button) findViewById(R.id.botonSOS);
+        botonPre = (Button) findViewById(R.id.botonPre);
         //TextView
         numEmg = (TextView) findViewById(R.id.numSOS);
         numPre = (TextView) findViewById(R.id.numPre);
         key = (TextView) findViewById(R.id.key);
+        desPre = (TextView) findViewById(R.id.desPre);
+        desEve = (TextView) findViewById(R.id.desEve);
         // Firebase
         database = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -114,26 +110,24 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void buttons(){
-        button_pre.setOnClickListener(new View.OnClickListener() {
+        botonPre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(preEsperaList.size()!=0){
                     mostrarDialogPre();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "No hay ninguna predenuncia pendiente", Toast.LENGTH_SHORT).show();
+                }else{
+                    toast("No hay ninguna predenuncia pendiente");
                 }
             }
         });
-        button_emg.setOnClickListener(new View.OnClickListener() {
+        botonSOS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if(emgEsperaList.size()!=0){
                     mostrarDialogEmg();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "No hay ninguna emergencia pendiente", Toast.LENGTH_SHORT).show();
+                }else{
+                    toast("No hay ninguna emergencia pendiente");
                 }
             }
         });
@@ -202,7 +196,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void activarEmergencia(){
-        Toast.makeText(getApplicationContext(),"Emergencia activa",Toast.LENGTH_SHORT).show();
+        toast("Emergencia activa");
         refEmgActiva.child(user.getUid()).setValue(emgEsperaList.get(0));
         refEmgEspera.removeValue();
         startActivity(new Intent(MainActivity.this, EmergenciaActivity.class));
@@ -210,7 +204,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void activarPredenuncia(){
-        Toast.makeText(getApplicationContext(),"Predenuncia activa",Toast.LENGTH_SHORT).show();
+        desPre.setText("Dirección: c/ Pepinillos 12\nUsuario: Sara Perez");
+        toast("Predenuncia activa");
         refPreActiva.child(user.getUid()).setValue(preEsperaList.get(0));
         refPreEspera.removeValue();
         preAct=true;
@@ -280,6 +275,10 @@ public class MainActivity extends AppCompatActivity
                         });
         alert = builder.create();
         alert.show();
+    }
+
+    private void toast(String texto){
+        Toast.makeText(getApplicationContext(),texto,Toast.LENGTH_LONG).show();
     }
 
 
