@@ -179,14 +179,13 @@
         android:id="@+id/textEve"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_alignTop="@+id/frameEve"
-        android:layout_alignBottom="@id/frameEve"
         android:gravity="center"
-        android:layout_toRightOf="@+id/alert_icon"
         android:textColor="@color/colorTextIcons"
-        android:text="Eventos:"
+        android:text="Evento:"
         android:textSize="20dp"
-        android:layout_marginLeft="30dp" />
+        android:layout_below="@+id/contentPre"
+        android:layout_alignLeft="@+id/textPre"
+        android:layout_alignStart="@+id/textPre" />
 
     <TextView
         android:id="@+id/asuntoEve"
@@ -214,13 +213,11 @@
         android:id="@+id/desEve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/contentEve"
-        android:layout_alignBottom="@id/contentEve"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="20dp"
         android:textColor="@color/colorTextIcons"
-        android:text="No hay ningún evento"/>
+        android:text="No hay ningún evento"
+        android:layout_below="@+id/frameEve"
+        android:layout_alignLeft="@+id/event_icon"
+        android:layout_alignStart="@+id/event_icon" />
 
 
 

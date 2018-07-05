@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Agente;
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Emergencia;
+import com.cdi.practica.jefaturapoliciaagente.Objetos.Evento;
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Predenuncia;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity
     private Boolean preAct;
     private FirebaseDatabase database;
     private FirebaseUser user;
-    private DatabaseReference refAgentes, refEmgEspera, refEmgActiva, refPreEspera, refPreActiva;
-    private ArrayList emgEsperaList, preEsperaList, preActivaList;
+    private DatabaseReference refAgentes, refEmgEspera, refEmgActiva, refPreEspera, refPreActiva, refEve;
+    private ArrayList emgEsperaList, preEsperaList, eveList;
     private TextView numEmg, numPre, nombreAgente, idAgente, key, desPre, desEve;
     private View headerView;
     private NavigationView navigationView;
@@ -67,8 +68,11 @@ public class MainActivity extends AppCompatActivity
 
         activity = this;
         init();
-        cargarEmergencias();
-        cargarPredenuncias();
+        cargarEventos();
+        if(desEve.getText().equals("No hay ningún evento")){
+            cargarEmergencias();
+            cargarPredenuncias();
+        }
         buttons();
 
         key.setVisibility(View.INVISIBLE);
@@ -102,11 +106,12 @@ public class MainActivity extends AppCompatActivity
         refEmgActiva = database.getReference("emergencias").child("activas");
         refPreEspera = database.getReference("predenuncias").child("espera").child(user.getUid());
         refPreActiva = database.getReference("predenuncias").child("activas");
+        refEve = database.getReference("eventos");
         getDatosAgente();
         // ArrayList
         emgEsperaList = new ArrayList();
         preEsperaList = new ArrayList();
-        preActivaList = new ArrayList();
+        eveList = new ArrayList();
     }
 
     private void buttons(){
@@ -195,6 +200,26 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    private void cargarEventos(){
+        refEve.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    if(snapshot.getKey().equals("evento1")){
+                        Evento eve = snapshot.getValue(Evento.class);
+                        eveList.add(eve);
+                        escribirDescripcion(eve);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     private void activarEmergencia(){
         toast("Emergencia activa");
         refEmgActiva.child(user.getUid()).setValue(emgEsperaList.get(0));
@@ -229,6 +254,12 @@ public class MainActivity extends AppCompatActivity
         return activa;
     }
 
+    private void escribirDescripcion(Evento e) {
+        desEve.setText("Nombre: "+e.getNombre()+
+                        "\nUbicación: "+e.getUbicacion()+
+                        "\nHora: "+e.getHora()+
+                        "\nNº de agentes: "+e.getNumAgentes());
+    }
 
     /**Dialog**/
 
