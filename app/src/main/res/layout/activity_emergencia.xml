@@ -4,18 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@drawable/darkred"
     tools:context="com.cdi.practica.jefaturapoliciaagente.EmergenciaActivity">
 
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos de la emergencia:"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/t0"
+        android:layout_width="275dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryText"
+        android:hint="..."
+        android:background="@color/colorTextIcons"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos de detenidos/implicados:"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/t0"
+        android:textColor="#FFFFFF"
+        android:textSize="14dp"/>
+
+    <EditText
+    android:id="@+id/t1"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/tv2"
+    android:layout_centerHorizontal="true"
+    android:textColor="@color/colorPrimaryText"
+        android:textSize="14dp"
+        android:hint="Nombre, apellidos, DNI, sucesos..."
+    android:background="@color/colorTextIcons"
+    android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/t2"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/t1"
+        android:textColor="@color/colorPrimaryText"
+        android:hint="Nombre, apellidos, DNI, sucesos..."
+        android:textSize="14dp"
+        android:background="@color/colorTextIcons"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/t3"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/t2"
+        android:textColor="@color/colorPrimaryText"
+        android:hint="Nombre, apellidos, DNI, sucesos..."
+        android:textSize="14dp"
+        android:background="@color/colorTextIcons"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/comletada"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="20dp"
-        android:text="Emergencia\nresuelta"/>
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:textSize="15dp"
+        android:text="Emergencia resuelta"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:padding="15dp"/>
 
 
 </RelativeLayout>
