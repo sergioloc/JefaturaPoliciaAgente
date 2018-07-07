@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimarySemiLight"
+    android:background="@drawable/simple_black"
     tools:context="com.cdi.practica.jefaturapoliciaagente.Sancion">
 
     <TextView
@@ -12,21 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tipo de sanción:"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryText"
+        android:textColor="#FFFFFF"
         android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/t2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_below="@id/t1"
-        android:textColor="@color/colorPrimaryText"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorTextIcons"
-        android:layout_margin="5dp"
         android:hint="..."
-        android:layout_marginTop="20dp"/>
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/t3"
@@ -36,13 +35,13 @@
         android:layout_below="@+id/t2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryText"
+        android:textColor="#FFFFFF"
         android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/t4"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/t3"
         android:textColor="@color/colorPrimaryText"
@@ -52,8 +51,8 @@
 
     <EditText
         android:id="@+id/t5"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/t4"
         android:textColor="@color/colorPrimaryText"
@@ -63,8 +62,8 @@
 
     <EditText
         android:id="@+id/t6"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="35dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/t5"
         android:textColor="@color/colorPrimaryText"
@@ -74,11 +73,12 @@
 
     <CheckBox
         android:id="@+id/t7"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/t6"
         android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimaryText"
+        android:background="#FFFFFF"
         android:layout_centerHorizontal="true"
         android:text="Importe pagado"/>
 
@@ -87,9 +87,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aceptar"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/t7"/>
+        android:layout_below="@+id/t7"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:padding="15dp"/>
 
 
 

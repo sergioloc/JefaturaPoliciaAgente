@@ -55,7 +55,6 @@
         android:backgroundTint="@color/colorAccent"
         android:textColor="@color/colorPrimaryText"
         android:textSize="20sp"
-        app:fontFamily="@string/common_google_play_services_unknown_issue"
         android:text="@string/aceptar"/>
 
 </RelativeLayout>
