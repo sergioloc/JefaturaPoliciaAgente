@@ -1,5 +1,6 @@
 package com.cdi.practica.jefaturapoliciaagente;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.cdi.practica.jefaturapoliciaagente.Adaptadores.RVAdapter;
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Item;
@@ -26,6 +28,10 @@ public class Atestado extends AppCompatActivity {
     private  RVAdapter adapterMat, adapterPer, adapterTes;
     private AlertDialog m, p, t;
     private FloatingActionButton botonMat, botonPer, botonTes;
+    private ImageView iv1,iv2,iv3,iv11,iv22,iv33;
+    private int cont=0;
+
+    private static final int CAMERA_PIC_REQUEST = 1337;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,69 @@ public class Atestado extends AppCompatActivity {
         initAlertDialogPersona();
         initAlertDialogTestigo();
         botones();
+
+        iv1 = (ImageView) findViewById(R.id.iv1);
+        iv2 = (ImageView) findViewById(R.id.iv2);
+        iv3 = (ImageView) findViewById(R.id.iv3);
+
+        iv11 = (ImageView) findViewById(R.id.iv11);
+        iv22 = (ImageView) findViewById(R.id.iv21);
+        iv33 = (ImageView) findViewById(R.id.iv31);
+
+        iv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cont=1;
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            }
+        });
+        iv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cont=2;
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            }
+        });
+        iv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cont=3;
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            }
+        });
+
+        iv11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog1 = new Dialog(Atestado.this);
+                dialog1.setContentView(R.layout.abrir_imagen);
+                dialog1.findViewById(R.id.imagen).setBackground(iv1.getDrawable());
+                dialog1.show();
+            }
+        });
+
+        iv22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog1 = new Dialog(Atestado.this);
+                dialog1.setContentView(R.layout.abrir_imagen);
+                dialog1.findViewById(R.id.imagen).setBackground(iv2.getDrawable());
+                dialog1.show();
+            }
+        });
+
+        iv33.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog1 = new Dialog(Atestado.this);
+                dialog1.setContentView(R.layout.abrir_imagen);
+                dialog1.findViewById(R.id.imagen).setBackground(iv3.getDrawable());
+                dialog1.show();
+            }
+        });
     }
 
     private void init(){
