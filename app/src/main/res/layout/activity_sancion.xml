@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/simple_black"
+    android:background="@drawable/fondo_main"
     tools:context="com.cdi.practica.jefaturapoliciaagente.Sancion">
 
     <TextView
         android:id="@+id/t1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tipo de sanción:"
         android:layout_marginTop="20dp"
         android:textColor="#FFFFFF"
+        android:gravity="center"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/t2"
+    <TextView
+        android:id="@+id/t11"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:text="Pulsa el recuadro para abrir las opciones"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
         android:layout_below="@id/t1"
-        android:layout_margin="10dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorTextIcons"
-        android:hint="..."
-        android:inputType="text" />
+        android:gravity="center"
+        android:textSize="12dp"/>
 
     <TextView
         android:id="@+id/t3"
@@ -34,7 +35,7 @@
         android:text="Datos del denunciado:"
         android:layout_below="@+id/t2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textColor="#FFFFFF"
         android:textSize="20dp"/>
 
@@ -46,8 +47,30 @@
         android:layout_below="@id/t3"
         android:textColor="@color/colorPrimaryText"
         android:hint="Nombre"
+        android:paddingLeft="10dp"
         android:background="@color/colorTextIcons"
         android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tvX"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/t4"
+        android:layout_alignRight="@id/t4"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:layout_below="@id/t11" />
+
+    <Spinner
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/t4"
+        android:layout_alignRight="@id/t4"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/t11" />
 
     <EditText
         android:id="@+id/t5"
@@ -57,6 +80,7 @@
         android:layout_below="@id/t4"
         android:textColor="@color/colorPrimaryText"
         android:hint="Apellidos"
+        android:paddingLeft="10dp"
         android:background="@color/colorTextIcons"
         android:layout_marginTop="20dp"/>
 
@@ -64,12 +88,14 @@
         android:id="@+id/t6"
         android:layout_width="275dp"
         android:layout_height="35dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/t5"
         android:textColor="@color/colorPrimaryText"
         android:hint="DNI"
+        android:paddingLeft="10dp"
         android:background="@color/colorTextIcons"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/t5"
+        android:layout_alignLeft="@+id/t5"
+        android:layout_alignStart="@+id/t5" />
 
     <CheckBox
         android:id="@+id/t7"
@@ -77,8 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/t6"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorPrimaryText"
-        android:background="#FFFFFF"
+        android:textColor="#FFFFFF"
         android:layout_centerHorizontal="true"
         android:text="Importe pagado"/>
 
@@ -89,10 +114,9 @@
         android:text="Aceptar"
         android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/t7"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/button_bg_rounded_corners"
         android:padding="15dp"/>
-
-
 
 </RelativeLayout>
