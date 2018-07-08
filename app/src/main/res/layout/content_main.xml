@@ -57,7 +57,7 @@
         android:gravity="center"
         android:layout_toRightOf="@+id/textPre"
         android:textColor="@color/colorTextIcons"
-        android:text="X"
+        android:text="0"
         android:textSize="20dp"
         android:layout_alignLeft="@+id/numSOS" />
 
@@ -133,7 +133,7 @@
         android:gravity="center"
         android:layout_toRightOf="@+id/textSOS"
         android:textColor="@color/colorTextIcons"
-        android:text="X"
+        android:text="0"
         android:textSize="20dp"
         android:layout_marginLeft="20dp" />
 
@@ -183,9 +183,11 @@
         android:textColor="@color/colorTextIcons"
         android:text="Evento:"
         android:textSize="20dp"
-        android:layout_below="@+id/contentPre"
-        android:layout_alignLeft="@+id/textPre"
-        android:layout_alignStart="@+id/textPre" />
+        android:layout_below="@id/contentPre"
+        android:layout_alignLeft="@id/textPre"
+        android:layout_alignStart="@id/textPre"
+        android:layout_alignTop="@id/frameEve"
+        android:layout_alignBottom="@id/frameEve"/>
 
     <TextView
         android:id="@+id/asuntoEve"

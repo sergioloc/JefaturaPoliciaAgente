@@ -1,6 +1,5 @@
 package com.cdi.practica.jefaturapoliciaagente;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Agente;
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Emergencia;
 import com.cdi.practica.jefaturapoliciaagente.Objetos.Evento;
@@ -45,7 +42,6 @@ public class MainActivity extends AppCompatActivity
     private TextView numEmg, numPre, nombreAgente, idAgente, key, desPre, desEve;
     private View headerView;
     private NavigationView navigationView;
-    private Activity activity;
     private Button botonSOS, botonPre;
 
 
@@ -66,21 +62,19 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        activity = this;
         init();
-        cargarEventos();
-        if(desEve.getText().equals("No hay ningún evento")){
+        if(user.getUid().equals("dmA60cSLAGOr7dT7FN7U5L32i4w2")){
+            cargarEventos();
+        }else{
             cargarEmergencias();
             cargarPredenuncias();
         }
         buttons();
-
         key.setVisibility(View.INVISIBLE);
 
     }
 
-
-
+    
     /**Inits**/
 
     private void init(){
@@ -236,7 +230,7 @@ public class MainActivity extends AppCompatActivity
         preAct=true;
     }
 
-    private Boolean estaActiva(){
+    /*private Boolean estaActiva(){
         boolean activa = false;
         refPreActiva.child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
@@ -252,7 +246,7 @@ public class MainActivity extends AppCompatActivity
         if(key.getText().toString().equals(user.getUid()))
             activa = true;
         return activa;
-    }
+    }*/
 
     private void escribirDescripcion(Evento e) {
         desEve.setText("Nombre: "+e.getNombre()+
